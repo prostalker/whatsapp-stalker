@@ -10,6 +10,9 @@ var ob = new MutationObserver(function(mutations) {
 	console.log(target.children[0].children[1].children[1].children[0].children[0].children[0].innerText + (mutations[0].addedNodes[0] && ' is ' + mutations[0].addedNodes[0].children[0].innerText + ' since %c' + Date().slice(16,24) + '%c' || mutations[0].removedNodes[0] && ' was ' + mutations[0].removedNodes[0].children[0].innerText + ' till %c%c' + Date().slice(16,24)),'color: green', 'color: red')
 	if(mutations[0].addedNodes[0]){
 		obs.observe(target.children[0].children[1].children[1].children[1].children[0], config)
+		if(window.showAlert){
+			alert('!')
+		}
 	}
 });
 var obs = new MutationObserver(function(mutations) {
